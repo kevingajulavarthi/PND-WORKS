@@ -73,13 +73,13 @@ export const CarSchematic: React.FC<CarSchematicProps> = ({ selectedParts, onTog
 
           {/* LEFT FENDER (top of car in top-down view) */}
           <g
-            onClick={() => onTogglePart('left-fender')}
+            onClick={() => onTogglePart('left-front-fender')}
             className="cursor-pointer transition-all hover:opacity-80"
           >
             <path
               d="M 55 42 L 140 38 L 140 56 L 55 66 Z"
-              fill={isSel('left-fender') ? '#2563EB' : '#1e293b'}
-              stroke={isSel('left-fender') ? '#60A5FA' : '#475569'}
+              fill={isSel('left-front-fender') ? '#2563EB' : '#1e293b'}
+              stroke={isSel('left-front-fender') ? '#60A5FA' : '#475569'}
               strokeWidth="1.5"
             />
             <text x="98" y="52" fill="#ffffff" fontSize="8" fontWeight="bold" textAnchor="middle">
@@ -89,13 +89,13 @@ export const CarSchematic: React.FC<CarSchematicProps> = ({ selectedParts, onTog
 
           {/* RIGHT FENDER (bottom of car in top-down view) */}
           <g
-            onClick={() => onTogglePart('right-fender')}
+            onClick={() => onTogglePart('right-front-fender')}
             className="cursor-pointer transition-all hover:opacity-80"
           >
             <path
               d="M 55 154 L 140 164 L 140 182 L 55 178 Z"
-              fill={isSel('right-fender') ? '#2563EB' : '#1e293b'}
-              stroke={isSel('right-fender') ? '#60A5FA' : '#475569'}
+              fill={isSel('right-front-fender') ? '#2563EB' : '#1e293b'}
+              stroke={isSel('right-front-fender') ? '#60A5FA' : '#475569'}
               strokeWidth="1.5"
             />
             <text x="98" y="173" fill="#ffffff" fontSize="8" fontWeight="bold" textAnchor="middle">
@@ -105,7 +105,7 @@ export const CarSchematic: React.FC<CarSchematicProps> = ({ selectedParts, onTog
 
           {/* ORVM Mirrors */}
           <g
-            onClick={() => onTogglePart('orvm')}
+            onClick={() => onTogglePart('left-orvm')}
             className="cursor-pointer transition-all hover:opacity-80"
           >
             <rect
@@ -114,8 +114,8 @@ export const CarSchematic: React.FC<CarSchematicProps> = ({ selectedParts, onTog
               width="14"
               height="8"
               rx="2"
-              fill={isSel('orvm') ? '#2563EB' : '#334155'}
-              stroke={isSel('orvm') ? '#60A5FA' : '#64748B'}
+              fill={isSel('left-orvm') ? '#2563EB' : '#334155'}
+              stroke={isSel('left-orvm') ? '#60A5FA' : '#64748B'}
             />
             <rect
               x="142"
@@ -123,20 +123,24 @@ export const CarSchematic: React.FC<CarSchematicProps> = ({ selectedParts, onTog
               width="14"
               height="8"
               rx="2"
-              fill={isSel('orvm') ? '#2563EB' : '#334155'}
-              stroke={isSel('orvm') ? '#60A5FA' : '#64748B'}
+              fill={isSel('right-orvm') ? '#2563EB' : '#334155'}
+              stroke={isSel('right-orvm') ? '#60A5FA' : '#64748B'}
+              onClick={(event) => {
+                event.stopPropagation();
+                onTogglePart('right-orvm');
+              }}
             />
           </g>
 
           {/* FRONT LEFT DOOR */}
           <g
-            onClick={() => onTogglePart('front-left-door')}
+            onClick={() => onTogglePart('left-front-door')}
             className="cursor-pointer transition-all hover:opacity-80"
           >
             <polygon
               points="144,38 230,36 230,56 144,56"
-              fill={isSel('front-left-door') ? '#2563EB' : '#1e293b'}
-              stroke={isSel('front-left-door') ? '#60A5FA' : '#475569'}
+              fill={isSel('left-front-door') ? '#2563EB' : '#1e293b'}
+              stroke={isSel('left-front-door') ? '#60A5FA' : '#475569'}
               strokeWidth="1.5"
             />
             <text x="187" y="50" fill="#ffffff" fontSize="8" fontWeight="bold" textAnchor="middle">
@@ -146,13 +150,13 @@ export const CarSchematic: React.FC<CarSchematicProps> = ({ selectedParts, onTog
 
           {/* REAR LEFT DOOR */}
           <g
-            onClick={() => onTogglePart('rear-left-door')}
+            onClick={() => onTogglePart('left-rear-door')}
             className="cursor-pointer transition-all hover:opacity-80"
           >
             <polygon
               points="234,36 320,38 320,56 234,56"
-              fill={isSel('rear-left-door') ? '#2563EB' : '#1e293b'}
-              stroke={isSel('rear-left-door') ? '#60A5FA' : '#475569'}
+              fill={isSel('left-rear-door') ? '#2563EB' : '#1e293b'}
+              stroke={isSel('left-rear-door') ? '#60A5FA' : '#475569'}
               strokeWidth="1.5"
             />
             <text x="277" y="50" fill="#ffffff" fontSize="8" fontWeight="bold" textAnchor="middle">
@@ -162,13 +166,13 @@ export const CarSchematic: React.FC<CarSchematicProps> = ({ selectedParts, onTog
 
           {/* FRONT RIGHT DOOR */}
           <g
-            onClick={() => onTogglePart('front-right-door')}
+            onClick={() => onTogglePart('right-front-door')}
             className="cursor-pointer transition-all hover:opacity-80"
           >
             <polygon
               points="144,164 230,164 230,184 144,182"
-              fill={isSel('front-right-door') ? '#2563EB' : '#1e293b'}
-              stroke={isSel('front-right-door') ? '#60A5FA' : '#475569'}
+              fill={isSel('right-front-door') ? '#2563EB' : '#1e293b'}
+              stroke={isSel('right-front-door') ? '#60A5FA' : '#475569'}
               strokeWidth="1.5"
             />
             <text x="187" y="177" fill="#ffffff" fontSize="8" fontWeight="bold" textAnchor="middle">
@@ -178,13 +182,13 @@ export const CarSchematic: React.FC<CarSchematicProps> = ({ selectedParts, onTog
 
           {/* REAR RIGHT DOOR */}
           <g
-            onClick={() => onTogglePart('rear-right-door')}
+            onClick={() => onTogglePart('right-rear-door')}
             className="cursor-pointer transition-all hover:opacity-80"
           >
             <polygon
               points="234,164 320,164 320,184 234,184"
-              fill={isSel('rear-right-door') ? '#2563EB' : '#1e293b'}
-              stroke={isSel('rear-right-door') ? '#60A5FA' : '#475569'}
+              fill={isSel('right-rear-door') ? '#2563EB' : '#1e293b'}
+              stroke={isSel('right-rear-door') ? '#60A5FA' : '#475569'}
               strokeWidth="1.5"
             />
             <text x="277" y="177" fill="#ffffff" fontSize="8" fontWeight="bold" textAnchor="middle">
@@ -251,13 +255,13 @@ export const CarSchematic: React.FC<CarSchematicProps> = ({ selectedParts, onTog
 
           {/* BOOT / TRUNK */}
           <g
-            onClick={() => onTogglePart('boot-trunk')}
+            onClick={() => onTogglePart('boot-lid')}
             className="cursor-pointer transition-all hover:opacity-80"
           >
             <polygon
               points="334,64 425,72 425,148 334,156"
-              fill={isSel('boot-trunk') ? '#2563EB' : '#1e293b'}
-              stroke={isSel('boot-trunk') ? '#60A5FA' : '#475569'}
+              fill={isSel('boot-lid') ? '#2563EB' : '#1e293b'}
+              stroke={isSel('boot-lid') ? '#60A5FA' : '#475569'}
               strokeWidth="2"
             />
             <text x="380" y="114" fill="#ffffff" fontSize="9" fontWeight="bold" textAnchor="middle">

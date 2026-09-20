@@ -28,7 +28,7 @@ export default function App() {
     brand: 'Hyundai',
     model: 'Creta',
     year: '2023',
-    damagedParts: ['front-bumper', 'left-fender'],
+    damagedParts: ['front-bumper', 'left-front-fender'],
     services: ['denting_painting', 'car_washing'],
     pickupDrop: {
       needed: false,
